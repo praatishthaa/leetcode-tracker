@@ -9,10 +9,11 @@ import {
 
 const COLORS = ["#F65BE3", "#BC69AA"]; // Solved, Remaining
 
-const PieChartComponent = ({ solved, remaining }) => {
+const PieChartComponent = ({ solved, remaining , target}) => {
   const data = [
     { name: "Solved", value: solved },
     { name: "Remaining", value: remaining },
+    { name: "Target", value: target },
   ];
 
   return (

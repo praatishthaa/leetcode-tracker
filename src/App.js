@@ -11,15 +11,14 @@ import bgImg from "./assets/back.png";
 function App() {
   const [data, setData] = useState(null);
 
-  const handleUpdate = (today, total) => {
-    const target = 550;
+  const handleUpdate = ({ today, total, target }) => {
     const todayDate = new Date();
     const targetDate = new Date("2026-01-01");
     const daysLeft = Math.ceil((targetDate - todayDate) / (1000 * 60 * 60 * 24));
     const remaining = Math.max(0, target - total);
     const perDay = daysLeft > 0 ? (remaining / daysLeft).toFixed(2) : 0;
 
-    setData({ today, total, remaining, daysLeft, perDay });
+    setData({ today, total, remaining, daysLeft, perDay, target });
   };
 
   return (
